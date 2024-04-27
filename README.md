@@ -121,7 +121,7 @@ Replace the files elements
 
 Or you can use the following command to copy all files
 ```bash
-bin/cake cakelte copy_file --all
+bin/cake cakelte copy_files --all
 ```
 
 ## Page debug
