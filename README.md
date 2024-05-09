@@ -1,5 +1,9 @@
 # CakeLTE: AdminLTE plugin for CakePHP 5.x
 
+If it's helpful you can buy me a coffee, thanks!
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2H3XTSGP)
+
 ## Getting Started
 
 ### Dependencies
