@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace CakeLte\View\Helper;
@@ -7,6 +8,7 @@ use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Log\Log;
 use Cake\View\Helper;
+use CakeLte\Enum\Layout;
 use CakeLte\Style\Header;
 use CakeLte\Style\Sidebar;
 use Composer\Json\JsonFile;
@@ -50,20 +52,40 @@ class CakeLteHelper extends Helper
      */
     public function getBodyClass(): string
     {
+        $layout = match (true) {
+            $this->getConfig('layout') instanceof Layout => $this->getConfig('layout')->getCssClass(),
+            is_string($this->getConfig('layout')) => $this->getConfig('layout'),
+            default => null,
+        };
+
         $output = array_filter([
-            $this->getConfig('small-text') ? 'text-sm' : null,
-            $this->getConfig('dark-mode') ? 'dark-mode' : null,
-            $this->getConfig('layout-boxed') ? 'layout-boxed' : null,
-            $this->getConfig('header.fixed') ? 'layout-navbar-fixed' : null,
-            $this->getConfig('sidebar.fixed') ? 'layout-fixed' : null,
-            $this->getConfig('sidebar.mini') ? 'sidebar-mini' : null,
-            $this->getConfig('sidebar.mini-md') ? 'sidebar-mini-md' : null,
-            $this->getConfig('sidebar.mini-xs') ? 'sidebar-mini-xs' : null,
-            $this->getConfig('sidebar.collapsed') ? 'sidebar-collapse' : null,
-            $this->getConfig('footer.fixed') ? 'layout-footer-fixed' : null,
+            $layout,
+
+            //$this->getConfig('small-text') ? 'text-sm' : null,
+            //$this->getConfig('dark-mode') ? 'dark-mode' : null,
+            //$this->getConfig('layout-boxed') ? 'layout-boxed' : null,
+            //$this->getConfig('header.fixed') ? 'layout-navbar-fixed' : null,
+            //$this->getConfig('sidebar.fixed') ? 'layout-fixed' : null,
+            //$this->getConfig('sidebar.mini') ? 'sidebar-mini' : null,
+            //$this->getConfig('sidebar.mini-md') ? 'sidebar-mini-md' : null,
+            //$this->getConfig('sidebar.mini-xs') ? 'sidebar-mini-xs' : null,
+            //$this->getConfig('sidebar.collapsed') ? 'sidebar-collapse' : null,
+            //$this->getConfig('footer.fixed') ? 'layout-footer-fixed' : null,
         ]);
 
         return implode(' ', $output);
+    }
+
+    /**
+     * @return string|null
+     */
+    public function rtl(): ?string
+    {
+        if ($this->getConfig('rtl') ?? false) {
+            return 'dir="rtl"';
+        }
+
+        return null;
     }
 
     /**
