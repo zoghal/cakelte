@@ -1,11 +1,14 @@
 # CakeLTE: AdminLTE plugin for CakePHP 5.x
 
+> [!CAUTION]
+> This version is not yet ready to be implemented, still in development
+
 ## Getting Started
 
 ### Dependencies
 
-- [FriendsOfCake/bootstrap-ui](https://github.com/FriendsOfCake/bootstrap-ui), transparently use Bootstrap 4 with CakePHP 4.
-- [AdminLTE 3.2](https://adminlte.io/), bootstrap 4 admin theme.
+- [FriendsOfCake/bootstrap-ui](https://github.com/FriendsOfCake/bootstrap-ui), transparently use Bootstrap 5 with CakePHP 5.x.
+- [AdminLTE 4.x](https://adminlte.io/), bootstrap 5 admin theme.
 
 ### Installing
 
@@ -134,9 +137,7 @@ echo $this->Html->link(__('CakeLTE debug page'), '/cake_lte/debug' );
 // {your-url}/cake_lte/debug
 ```
 
-![Page Debug with default layout](docs/page-debug_default.png)
-
-![Page Debug with top-nav layour](docs/page-debug_top-nav.png)
+![Page Debug with default layout](docs/page-debug_default_darkmode.png)
 
 ## License
 

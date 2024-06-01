@@ -69,7 +69,7 @@ endif;
         </h1>
         <p>
             <?= $this->Html->link(
-                '<i class="fab fa-github fa-fw"></i> CakeLTE ' . $this->CakeLte->version(),
+                '<i class="bi bi-github"></i> CakeLTE ' . $this->CakeLte->version(),
                 'https://github.com/arodu/cakelte',
                 ['escape' => false, 'target' => '_blank']
             ) ?>
@@ -250,7 +250,7 @@ endif;
     }
 
     .bullet::before {
-        font-family: "Font Awesome 5 Free";
+        font-family: "bootstrap-icons";
         font-weight: 900;
         font-size: 18px;
         display: inline-block;
@@ -263,11 +263,11 @@ endif;
 
     .bullet.success::before {
         color: #88c671;
-        content: "\f058";
+        content: "\F26A";
     }
 
     .bullet.problem::before {
         color: #d33d44;
-        content: "\f057";
+        content: "\F622";
     }
 </style>
